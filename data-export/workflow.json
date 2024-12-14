@@ -943,7 +943,7 @@
       {
         "parameters": {
           "chatId": "={{ $env.TELEGRAM_CHATID_REPORT }}",
-          "text": "=Актуальные данные резервного копирования Mikrotik\nВсего устройств в базе: {{ $node[\"MySQL4\"].json[\"All\"] }}\nАктивных устройств: {{ $node[\"MySQL4\"].json[\"Active\"] }}\nАктивных устройств с ошибками: {{ $node[\"MySQL4\"].json[\"Active with error\"] }}\nВремя завершения задания: {{new Date().toLocaleDateString()}} {{new Date().toLocaleTimeString()}}",
+          "text": "=Dados atuais de backup do Mikrotik \n Total de dispositivos no banco de dados: {{ $node[\"MySQL4\"].json[\"All\"] }}\nDispositivos ativos: {{ $node[\"MySQL4\"].json[\"Active\"] }}\nDispositivos ativos com erros: {{ $node[\"MySQL4\"].json[\"Active with error\"] }}\nTempo de conclusão da tarefa: {{new Date().toLocaleDateString()}} {{new Date().toLocaleTimeString()}}",
           "additionalFields": {}
         },
         "name": "Telegram",
@@ -1006,7 +1006,7 @@
           "fromEmail": "={{ $env.SMTP_FROM_MAIL }}",
           "toEmail": "={{ $env.SMTP_TO_MAIL_REPORT }}",
           "subject": "RMBackup Notification",
-          "text": "=Актуальные данные резервного копирования Mikrotik\nВсего устройств в базе: {{ $node[\"MySQL4\"].json[\"All\"] }}\nАктивных устройств: {{ $node[\"MySQL4\"].json[\"Active\"] }}\nАктивных устройств с ошибками: {{ $node[\"MySQL4\"].json[\"Active with error\"] }}\nВремя завершения задания: {{new Date().toLocaleDateString()}} {{new Date().toLocaleTimeString()}}",
+           "text": "=Dados Atuais de Backup do Mikrotik\nTotal de dispositivos no banco de dados: {{ $node[\"MySQL4\"].json[\"All\"] }}\nDispositivos ativos: {{ $node[\"MySQL4\"].json[\"Active\"] }}\nDispositivos ativos com erros: {{ $node[\"MySQL4\"].json[\"Active with error\"] }}\nHora de conclusão da tarefa: {{new Date().toLocaleDateString()}} {{new Date().toLocaleTimeString()}}",
           "options": {}
         },
         "name": "Send Email",
@@ -1673,7 +1673,7 @@
           "fromEmail": "={{ $env.SMTP_FROM_MAIL }}",
           "toEmail": "={{ $env.SMTP_TO_MAIL_NOTIFY }}",
           "subject": "RMBackup Notification",
-          "text": "=Ошибка в процессе: {{ $node[\"Error Trigger\"].json[\"workflow\"][\"name\"] }} (ID: {{ $node[\"Error Trigger\"].json[\"workflow\"][\"id\"] }})\nТип ошибки: {{ $node[\"Error Trigger\"].json[\"execution\"][\"error\"][\"name\"] }}\nОшибка в узле: {{ $node[\"Error Trigger\"].json[\"execution\"][\"error\"][\"node\"][\"name\"] }}\nТекст ошибки: {{ $node[\"Error Trigger\"].json[\"execution\"][\"error\"][\"message\"] }}\nПодробное описание ошибки:\n{{ $node[\"Error Trigger\"].json[\"execution\"][\"error\"][\"stack\"] }}",
+          "text": "=Erro no processo: {{ $node[\"Error Trigger\"].json[\"workflow\"][\"name\"] }} (ID: {{ $node[\"Error Trigger\"].json[\"workflow\"][\"id\"] }})\nTipo de erro: {{ $node[\"Error Trigger\"].json[\"execution\"][\"error\"][\"name\"] }}\nErro no nó: {{ $node[\"Error Trigger\"].json[\"execution\"][\"error\"][\"node\"][\"name\"] }}\nTexto do erro: {{ $node[\"Error Trigger\"].json[\"execution\"][\"error\"][\"message\"] }}\nDescrição detalhada do erro:\n{{ $node[\"Error Trigger\"].json[\"execution\"][\"error\"][\"stack\"] }}",
           "options": {}
         },
         "name": "Send Email",
@@ -1694,7 +1694,7 @@
       {
         "parameters": {
           "chatId": "={{ $env.TELEGRAM_CHATID_NOTIFY }}",
-          "text": "=Ошибка в процессе: {{ $node[\"Error Trigger\"].json[\"workflow\"][\"name\"] }} (ID: {{ $node[\"Error Trigger\"].json[\"workflow\"][\"id\"] }})\nТип ошибки: {{ $node[\"Error Trigger\"].json[\"execution\"][\"error\"][\"name\"] }}\nОшибка в узле: {{ $node[\"Error Trigger\"].json[\"execution\"][\"error\"][\"node\"][\"name\"] }}\nТекст ошибки: {{ $node[\"Error Trigger\"].json[\"execution\"][\"error\"][\"message\"] }}\nПодробное описание ошибки:\n{{ $node[\"Error Trigger\"].json[\"execution\"][\"error\"][\"stack\"] }}",
+         "text": "=Erro no processo: {{ $node[\"Error Trigger\"].json[\"workflow\"][\"name\"] }} (ID: {{ $node[\"Error Trigger\"].json[\"workflow\"][\"id\"] }})\nTipo de erro: {{ $node[\"Error Trigger\"].json[\"execution\"][\"error\"][\"name\"] }}\nErro no nó: {{ $node[\"Error Trigger\"].json[\"execution\"][\"error\"][\"node\"][\"name\"] }}\nTexto do erro: {{ $node[\"Error Trigger\"].json[\"execution\"][\"error\"][\"message\"] }}\nDescrição detalhada do erro:\n{{ $node[\"Error Trigger\"].json[\"execution\"][\"error\"][\"stack\"] }}",
           "additionalFields": {}
         },
         "name": "Telegram",
@@ -2410,7 +2410,7 @@
       {
         "parameters": {
           "respondWith": "text",
-          "responseBody": "<div class=\"alert alert-success\">Подключение прошло успешно</div>",
+          "responseBody": "<div class=\"alert alert-success\">A conexão foi bem-sucedida</div>",
           "options": {
             "responseCode": 200
           }

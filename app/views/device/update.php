@@ -5,10 +5,10 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\Device */
 
-$this->title = 'Изменение устройства: ' . $model->name;
-$this->params['breadcrumbs'][] = ['label' => 'Устройства', 'url' => ['index']];
+$this->title = 'Mudando de dispositivo: ' . $model->name;
+$this->params['breadcrumbs'][] = ['label' => 'Dispositivos', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->name, 'url' => ['view', 'id' => $model->id]];
-$this->params['breadcrumbs'][] = 'Изменить';
+$this->params['breadcrumbs'][] = 'Mudar';
 ?>
 <div class="device-update">
 

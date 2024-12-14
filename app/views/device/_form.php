@@ -21,7 +21,7 @@ use yii\helpers\StringHelper;
 
     <?= $form->field($model, 'username')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'sshuse')->dropDownList(array('0' => 'Нет', '1' => 'Да')) ?>
+    <?= $form->field($model, 'sshuse')->dropDownList(array('0' => 'Não', '1' => 'Sim')) ?>
 
     <?php
         if (empty($_ENV["DATA_ENCRYPT_PASSWORD"])) {
@@ -34,7 +34,7 @@ use yii\helpers\StringHelper;
 
     <?= $form->field($model, 'sshkey')->textarea(['rows' => 4]) ?>
 
-    <?= $form->field($model, 'active')->dropDownList(array('1' => 'Да', '0' => 'Нет')) ?>
+    <?= $form->field($model, 'active')->dropDownList(array('1' => 'Sim', '0' => 'Não')) ?>
 
     <div class="form-group">
         <?= Html::submitButton('Сохранить', ['class' => 'btn btn-success']) ?>

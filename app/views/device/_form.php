@@ -37,7 +37,7 @@ use yii\helpers\StringHelper;
     <?= $form->field($model, 'active')->dropDownList(array('1' => 'Sim', '0' => 'Não')) ?>
 
     <div class="form-group">
-        <?= Html::submitButton('Сохранить', ['class' => 'btn btn-success']) ?>
+        <?= Html::submitButton('Salvar', ['class' => 'btn btn-success']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

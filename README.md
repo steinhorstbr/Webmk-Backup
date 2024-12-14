@@ -1,4 +1,4 @@
-apt isntall curl sudo git
+apt install curl sudo git
 
 git clone https://github.com/steinhorstbr/Webmk-Backup.git
 

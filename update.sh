@@ -30,10 +30,10 @@ done
 #Показываем справку
 if [[ $help == "1" ]]
 then
-        echo "Скрипт автоматического обновления Real Mikrotik Backup"
+        echo "Script de atualização automática Real Mikrotik Backup"
         echo;echo "Usage: install.sh [OPTIONS]"
-        echo; echo "Ключ                Описание"
-        echo "--advanced        Останавливает и запускает контейнеры с альтернативной расширенной конфигурций. В основном для разработки"
+        echo; echo "Descrição chave"
+        echo "--advanced        Interrompe e inicia contêineres com configurações avançadas alternativas. Principalmente para o desenvolvimento"
         exit 0
 fi
 

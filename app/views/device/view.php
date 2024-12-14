@@ -7,7 +7,7 @@ use yii\widgets\DetailView;
 /* @var $model app\models\Device */
 
 $this->title = $model->name;
-$this->params['breadcrumbs'][] = ['label' => 'Устройства', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Dispositivos', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>
@@ -16,16 +16,16 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Изменить', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Удалить', ['delete', 'id' => $model->id], [
+        <?= Html::a('Mudar', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('Excluir', ['delete', 'id' => $model->id], [
             'class' => 'btn btn-danger',
             'data' => [
-                'confirm' => 'Вы уверены, что хотите удалить это устройство?',
+                'confirm' => 'Tem certeza de que deseja remover este dispositivo??',
                 'method' => 'post',
             ],
         ]) ?>
-        <?= Html::a('Сделать бекап устройства', ['backupone', 'id' => $model->id], ['class' => 'btn btn-warning']) ?>
-        <?= Html::a('Тест подключения', ['view', 'id' => $model->id, 'testconn' => 1], ['class' => 'btn btn-info']) ?>
+        <?= Html::a('Faça um backup do dispositivo', ['backupone', 'id' => $model->id], ['class' => 'btn btn-warning']) ?>
+        <?= Html::a('Teste de conexão', ['view', 'id' => $model->id, 'testconn' => 1], ['class' => 'btn btn-info']) ?>
 
         <?php
             if(Yii::$app->request->get('testconn') == 1){
@@ -34,9 +34,9 @@ $this->params['breadcrumbs'][] = $this->title;
         ?>
         <?php
             if(Yii::$app->request->get('resultn8n') == "OK"){
-              echo Html::tag('div', 'Запрос отправлен успешно', ['class' => 'alert alert-success']);
+              echo Html::tag('div', 'Solicitação enviada com sucesso', ['class' => 'alert alert-success']);
             } elseif(Yii::$app->request->get('resultn8n') == "FAIL") {
-              echo Html::tag('div', 'Ошибка отправки запроса', ['class' => 'alert alert-danger']);
+              echo Html::tag('div', 'Erro ao enviar solicitação', ['class' => 'alert alert-danger']);
             }
         ?>
     </p>
@@ -62,10 +62,10 @@ $this->params['breadcrumbs'][] = $this->title;
 
         <?php
             if(Yii::$app->request->get('downloaderror') == "true"){
-               echo Html::tag('div', 'Ошибка получения файла для скачивания', ['class' => 'alert alert-danger']);
+               echo Html::tag('div', 'Erro ao receber arquivo para download', ['class' => 'alert alert-danger']);
             }
         ?>
-        <?= Html::a('Скачать последний бинарный бекап', ['downloadbin', 'id' => $model->id, 'name' => $model->name], ['class' => 'btn btn-success']) ?>
-        <?= Html::a('Скачать последний экспортный бекап', ['downloadrsc', 'id' => $model->id, 'name' => $model->name], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Baixe o backup binário mais recente', ['downloadbin', 'id' => $model->id, 'name' => $model->name], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Baixe o backup de exportação mais recente', ['downloadrsc', 'id' => $model->id, 'name' => $model->name], ['class' => 'btn btn-success']) ?>
 
 </div>

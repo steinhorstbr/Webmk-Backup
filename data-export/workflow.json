@@ -943,7 +943,7 @@
       {
         "parameters": {
           "chatId": "={{ $env.TELEGRAM_CHATID_REPORT }}",
-          "text": "=Dados atuais de backup do Mikrotik\nTotal de dispositivos na base: {{ $node[\"MySQL4\"].json[\"All\"] }}\nDispositivos ativos: {{ $node[\"MySQL4\"].json[\"Active\"] }}\nDispositivos ativos com erros: {{ $node[\"MySQL4\"].json[\"Active with error\"] }}\nВремя завершения задания: {{new Date().toLocaleDateString()}} {{new Date().toLocaleTimeString()}}",
+          "text": "=Dados atuais de backup do Mikrotik\nTotal de dispositivos na base: {{ $node[\"MySQL4\"].json[\"All\"] }}\nDispositivos ativos: {{ $node[\"MySQL4\"].json[\"Active\"] }}\nDispositivos ativos com erros: {{ $node[\"MySQL4\"].json[\"Active with error\"] }}\nHora de conclusão da tarefa: {{new Date().toLocaleDateString()}} {{new Date().toLocaleTimeString()}}",
           "additionalFields": {}
         },
         "name": "Telegram",
@@ -2482,7 +2482,7 @@
       {
         "parameters": {
           "respondWith": "text",
-          "responseBody": "=<div class=\"alert alert-danger\">Ошибка с кодом {{ $node[\"Execute Command\"].json[\"stdout\"] }}. {{ $node[\"Execute Command\"].json[\"stderr\"] }}</div>",
+          "responseBody": "=<div class=\"alert alert-danger\">Erro com o código {{ $node[\"Execute Command\"].json[\"stdout\"] }}. {{ $node[\"Execute Command\"].json[\"stderr\"] }}</div>",
           "options": {
             "responseCode": 200
           }

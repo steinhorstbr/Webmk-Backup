@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel app\models\DeviceSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Устройства';
+$this->title = 'Dispositivos';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="device-index">
@@ -15,13 +15,13 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Создать устройство', ['create'], ['class' => 'btn btn-success']) ?>
-        <?= Html::a('Запустить бекап вручную', ['backupall'], ['class' => 'btn btn-warning']) ?>
+        <?= Html::a('Crie um dispositivo', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Iniciar backup manualmente', ['backupall'], ['class' => 'btn btn-warning']) ?>
         <?php
             if(Yii::$app->request->get('resultn8n') == "OK"){
-               echo Html::tag('div', 'Запрос отправлен успешно', ['class' => 'alert alert-success']);
+               echo Html::tag('div', 'Solicitação enviada com sucesso', ['class' => 'alert alert-success']);
             } elseif(Yii::$app->request->get('resultn8n') == "FAIL") {
-               echo Html::tag('div', 'Ошибка отправки запроса', ['class' => 'alert alert-danger']);
+               echo Html::tag('div', 'Erro ao enviar solicitação', ['class' => 'alert alert-danger']);
             }
         ?>
     </p>

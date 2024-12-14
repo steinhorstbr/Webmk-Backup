@@ -31,18 +31,18 @@ done
 #Показываем справку
 if [[ $help == "1" ]]
 then
-	echo "Скрипт автоматической установки Real Mikrotik Backup"
-	echo;echo "Usage: install.sh [OPTIONS]"
-	echo; echo "Ключ		Описание"
-	echo "--fullinstall	Запускает процесс предварительной установки среды выполнения Docker и Docker Compose"
-	echo "--advanced	Запускает контейнеры с альтернативной расширенной конфигурций. В основном для разработки"
+	echo "Script de instalação automática do Real Mikrotik Backup"
+	echo;echo "Uso: install.sh [OPÇÕES]"
+	echo; echo "Descrição chave"
+	echo "--fullinstall	Inicia o tempo de execução do Docker e o processo de pré-instalação do Docker Compose"
+	echo "--advanced	Inicia contêineres com configurações avançadas alternativas. Principalmente para o desenvolvimento"
 	exit 0
 fi
 
 #Устанавливаем Docker и Docker Compose
 if [[ $fullinstall == "1" ]]
 then
-	border Устанавливаем Docker и Docker Compose
+	border Instalando Docker e Docker Compose
 	./scripts/dockerinstall.sh
 fi
 
@@ -50,11 +50,11 @@ fi
 cp .env.sample .env
 
 #Запрашиваем данные для заполнения файла .env
-border Установка переменных в .env
+border Configurando variáveis ​​para .env
 ./scripts/envfill.sh
 
 #Запуск контейнеров
-border Запуск Docker контейнеров
+border Executando contêineres Docker
 if [[ $advanced == "1" ]]
 then
 	docker-compose -f docker-compose-advanced.yml up --build -d
@@ -63,7 +63,7 @@ else
 fi
 
 #Инициализация базы данных
-border Инициализация базы данных
+border Inicializando o banco de dados
 while :
 do
 	sleep 5
@@ -77,9 +77,9 @@ do
 done
 
 #Установка владельца на папку web файлоы
-border Установка прав доступа на папку web файлов
+border Configurando direitos de acesso à pasta de arquivos da web
 chown -R www-data:www-data ./app/
 
 #Запуск скрипта установки учетной записи администартора
-border Установка учетной записи админстратора на web интерфейс
+border Configurando uma conta de administrador na interface da web
 ./scripts/webadminchange.sh

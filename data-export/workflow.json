@@ -943,7 +943,7 @@
       {
         "parameters": {
           "chatId": "={{ $env.TELEGRAM_CHATID_REPORT }}",
-          "text": "=Актуальные данные резервного копирования Mikrotik\nВсего устройств в базе: {{ $node[\"MySQL4\"].json[\"All\"] }}\nАктивных устройств: {{ $node[\"MySQL4\"].json[\"Active\"] }}\nАктивных устройств с ошибками: {{ $node[\"MySQL4\"].json[\"Active with error\"] }}\nВремя завершения задания: {{new Date().toLocaleDateString()}} {{new Date().toLocaleTimeString()}}",
+          "text": "=Dados atuais de backup do Mikrotik\nTotal de dispositivos na base: {{ $node[\"MySQL4\"].json[\"All\"] }}\nDispositivos ativos: {{ $node[\"MySQL4\"].json[\"Active\"] }}\nDispositivos ativos com erros: {{ $node[\"MySQL4\"].json[\"Active with error\"] }}\nВремя завершения задания: {{new Date().toLocaleDateString()}} {{new Date().toLocaleTimeString()}}",
           "additionalFields": {}
         },
         "name": "Telegram",
@@ -2410,7 +2410,7 @@
       {
         "parameters": {
           "respondWith": "text",
-          "responseBody": "<div class=\"alert alert-success\">Подключение прошло успешно</div>",
+          "responseBody": "<div class=\"alert alert-success\">A conexão foi bem-sucedida.</div>",
           "options": {
             "responseCode": 200
           }

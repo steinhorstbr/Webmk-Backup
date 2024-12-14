@@ -49,17 +49,17 @@ class Device extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
-            'name' => 'Имя',
-            'ip_address' => 'IP адрес',
-            'sshport' => 'SSH порт',
-            'username' => 'Имя пользователя',
-            'sshuse' => 'Использовать SSH ключ?',
-            'password' => 'Пароль',
-            'sshkey' => 'Приватный SSH ключ',
-            'active' => 'Активно?',
-            'laststatus' => 'Последний статус',
-            'lastok' => 'Последняя удачная попытка',
-            'lastbad' => 'Последняя попытка с ошибкой',
+            'name' => 'Nome',
+            'ip_address' => 'IP',
+            'sshport' => 'Porta SSH',
+            'username' => 'Nome / Usuario',
+            'sshuse' => 'Usar chave SSH?',
+            'password' => 'Senha',
+            'sshkey' => 'Chave SSH privada',
+            'active' => 'Ativo?',
+            'laststatus' => 'Estado mais recente',
+            'lastok' => 'Última tentativa bem sucedida',
+            'lastbad' => 'Última tentativa com erro',
         ];
     }
 }
